@@ -242,6 +242,10 @@ body {
   color: #262626;
 }
 
+.sidebar > .usuario .texto span{
+  display: flex;
+}
+
 .sidebar .sugestoes .titulo {
   display: flex;
   justify-content: space-between;
