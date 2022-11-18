@@ -32,9 +32,9 @@ function User(props){
         <img id="image-perfil" src={props.imagem} data-test="profile-image" onClick={editarImagem}/>
         <div class="texto" data-test="name">
             <strong>{props.nomeuser}</strong>
-            <span data-test="edit-name">
+            <span>
                 <p class="nome-editavel">{props.nome}</p>
-                <div onClick={editarNome}>
+                <div onClick={editarNome} data-test="edit-name">
                     <ion-icon name="pencil"></ion-icon>
                 </div>
             </span>

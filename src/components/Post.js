@@ -1,29 +1,12 @@
-export default function Post(){
-
-    const posts = [
-        {nome:'meowed', imagem: 'assets/img/meowed.svg',
-        conteudo: "assets/img/gato-telefone.svg", imgcurtida: "assets/img/respondeai.svg", 
-        contacurtida: 'respondeai', numcurtidas: '101.523'},
-        {nome:'barked', imagem: 'assets/img/barked.svg', 
-        conteudo: "assets/img/dog.svg", imgcurtida: "assets/img/adorable_animals.svg", 
-        contacurtida: 'adorable_animals', numcurtidas: '99.159'}
-    ]
-
-    return(
-        <>{posts.map((p) => <Conjunto imagem={p.imagem} nome={p.nome} conteudo={p.conteudo} 
-        imgcurtida={p.imgcurtida} contacurtida={p.contacurtida} numcurtidas={p.numcurtidas}/>)}</>
-    )
-}
-
-function Conjunto(props){
+export default function Post(props){
 
     function salvarPost(){
-        const item = document.getElementById('salvar')
+        const item = document.getElementsByClassName('.salvar')
         console.log(item.name)
         if(item.name === 'bookmark-outline'){
             item.name = 'bookmark'
         } else if(item.name === 'bookmark'){
-           item.name = 'bookmark-outline'
+        item.name = 'bookmark-outline'
         }
     }
 
@@ -51,7 +34,7 @@ function Conjunto(props){
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div onClick={salvarPost}>
-                        <ion-icon name="bookmark-outline" data-test="save-post" id="salvar"></ion-icon>
+                        <ion-icon name="bookmark-outline" data-test="save-post" class="salvar"></ion-icon>
                     </div>
                 </div>
 
