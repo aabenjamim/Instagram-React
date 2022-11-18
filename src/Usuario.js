@@ -6,13 +6,13 @@ export default function Usuario(){
 
 function User(props){
     return(
-    <div class="usuario">
-        <img src={props.imagem} />
-        <div class="texto">
+    <div class="usuario" data-test="user">
+        <img src={props.imagem} data-test="profile-image"/>
+        <div class="texto" data-test="name">
             <strong>{props.nomeuser}</strong>
             <span>
                 {props.nome}
-                <ion-icon name="pencil"></ion-icon>
+                <ion-icon name="pencil" data-test="edit-name"></ion-icon>
             </span>
         </div>
     </div>

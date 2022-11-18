@@ -17,7 +17,7 @@ export default function Post(){
 
 function Conjunto(props){
     return(
-        <div class="post">
+        <div class="post" data-test="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.imagem} />
@@ -29,18 +29,18 @@ function Conjunto(props){
             </div>
 
             <div class="conteudo">
-                <img src={props.conteudo} />
+                <img src={props.conteudo} data-test="post-image"/>
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name="heart-outline" data-test="like-post"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon name="bookmark-outline" data-test="save-post"></ion-icon>
                     </div>
                 </div>
 
