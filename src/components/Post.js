@@ -16,6 +16,17 @@ export default function Post(){
 }
 
 function Conjunto(props){
+
+    function salvarPost(){
+        const item = document.getElementById('salvar')
+        console.log(item.name)
+        if(item.name === 'bookmark-outline'){
+            item.name = 'bookmark'
+        } else if(item.name === 'bookmark'){
+           item.name = 'bookmark-outline'
+        }
+    }
+
     return(
         <div class="post" data-test="post">
             <div class="topo">
@@ -39,8 +50,8 @@ function Conjunto(props){
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
-                    <div>
-                        <ion-icon name="bookmark-outline" data-test="save-post"></ion-icon>
+                    <div onClick={salvarPost}>
+                        <ion-icon name="bookmark-outline" data-test="save-post" id="salvar"></ion-icon>
                     </div>
                 </div>
 
