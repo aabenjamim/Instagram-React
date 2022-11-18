@@ -10,13 +10,21 @@ function User(props){
     function editarNome(){
         let name = prompt('Que nome deseja inserir?')
         let novo = document.querySelector('.nome-editavel')
-        novo.innerHTML = name
+        if(!name){
+            return
+        } else{
+            novo.innerHTML=name
+        }
     }
 
     function editarImagem(){
         let img = prompt('Insira o link da nova foto de perfil')
         let novo = document.getElementById('image-perfil')
-        novo.src = img
+        if(!img){
+            return
+        } else{
+            novo.src = img
+        }
     }
 
     return(
