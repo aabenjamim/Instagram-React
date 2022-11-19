@@ -31,10 +31,10 @@ function User(props){
     return(
     <div className="usuario" data-test="user">
         <img id="image-perfil" src={props.imagem} data-test="profile-image" onClick={editarImagem}/>
-        <div className="texto" data-test="name">
+        <div className="texto">
             <strong>{props.nomeuser}</strong>
             <span>
-                <p className="nome-editavel">{props.nome}</p>
+                <p className="nome-editavel" data-test="name">{props.nome}</p>
                 <div onClick={editarNome} data-test="edit-name">
                     <ion-icon name="pencil"></ion-icon>
                 </div>

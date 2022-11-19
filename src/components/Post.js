@@ -66,15 +66,15 @@ export default function Post(props){
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
-                    <div onClick={salvarPost}>
-                        <ion-icon name={salvar} data-test="save-post"></ion-icon>
+                    <div onClick={salvarPost} data-test="save-post">
+                        <ion-icon name={salvar}></ion-icon>
                     </div>
                 </div>
 
                 <div className="curtidas">
                     <img src={props.imgcurtida}/> 
                     <div className="texto">
-                        Curtido por <strong>{props.contacurtida}</strong> e <strong>outras {num} pessoas</strong>
+                        Curtido por <strong>{props.contacurtida}</strong> e <strong>outras <span data-test="likes-number">{num}</span> pessoas</strong>
                     </div>
                 </div>
             </div>
