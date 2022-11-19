@@ -51,9 +51,9 @@ export default function Post(props){
                 </div>
             </div>
 
-            <div className="conteudo">
+            <div className="conteudo" onDoubleClick={curtirNaFoto} data-test="like-post">
                 <div className={anim}>
-                    <ion-icon name='heart' data-test="like-post"></ion-icon>
+                    <ion-icon name='heart'></ion-icon>
                 </div>
                 <img src={props.conteudo} data-test="post-image" onDoubleClick={curtirNaFoto}/>
             </div>
