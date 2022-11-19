@@ -1,47 +1,80 @@
+import { useState } from "react"
+
 export default function Post(props){
 
+    const [salvar, setSalvar] = useState('bookmark-outline')
+    const [like, setLike] = useState('heart-outline')
+    const [cor, setCor] = useState('black')
+    const [num, setNum] = useState(props.numcurtidas)
+    const [anim, setAnim] = useState('oculto')
+
     function salvarPost(){
-        const item = document.getElementsByClassName('.salvar')
-        console.log(item.name)
-        if(item.name === 'bookmark-outline'){
-            item.name = 'bookmark'
-        } else if(item.name === 'bookmark'){
-        item.name = 'bookmark-outline'
+        if(salvar ==='bookmark-outline'){
+            setSalvar('bookmark')
+        } else{
+            setSalvar('bookmark-outline')
         }
     }
 
+    function curtirPost(){
+        if(like==='heart'){
+            setLike('heart-outline')
+            setCor('black')
+            setNum(num - 1)
+        } else{
+            curtiu()
+        }
+    }
+    
+    function curtiu(){
+        if(like==='heart-outline'){
+            setLike('heart')
+            setCor('red')
+            setNum(num + 1)
+        }
+    }
+    
+    function curtirNaFoto(){
+        curtiu()
+        setAnim('aparecer')
+    }
+
     return(
-        <div class="post" data-test="post">
-            <div class="topo">
-                <div class="usuario">
-                    <img src={props.imagem} />
+        <div className="post" data-test="post">
+            <div className="topo">
+                <div className="usuario">
+                    <img src={props.imagem}/>
                     {props.nome}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
-                <img src={props.conteudo} data-test="post-image"/>
+            <div className="conteudo">
+                <div className={anim}>
+                    <ion-icon name='heart' data-test="like-post"></ion-icon>
+                </div>
+                <img src={props.conteudo} data-test="post-image" onDoubleClick={curtirNaFoto}/>
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
-                        <ion-icon name="heart-outline" data-test="like-post"></ion-icon>
+                        <ion-icon name={like} data-test="like-post"
+                         style={{color: cor}} onClick={curtirPost}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div onClick={salvarPost}>
-                        <ion-icon name="bookmark-outline" data-test="save-post" class="salvar"></ion-icon>
+                        <ion-icon name={salvar} data-test="save-post"></ion-icon>
                     </div>
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={props.imgcurtida}/> 
-                    <div class="texto">
-                        Curtido por <strong>{props.contacurtida}</strong> e <strong>outras {props.numcurtidas} pessoas</strong>
+                    <div className="texto">
+                        Curtido por <strong>{props.contacurtida}</strong> e <strong>outras {num} pessoas</strong>
                     </div>
                 </div>
             </div>

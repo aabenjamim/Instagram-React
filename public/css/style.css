@@ -179,6 +179,9 @@ body {
 .post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
   cursor: pointer;
 }
+.post .conteudo{
+  position: relative;
+}
 
 .post .conteudo img {
   width: 100%;
@@ -210,6 +213,44 @@ body {
 
 .post:last-child {
   margin-bottom: 18px;
+}
+
+.conteudo .oculto{
+  display: none;
+}
+
+.aparecer{
+  color: white;
+  position: absolute;
+  z-index: 1;
+  font-size: 125px;
+  top: 50%;
+  left: 38%;
+
+  animation-name: curtir;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+
+  animation-name: sumir;
+  animation-delay: 0.4s;
+}
+
+@keyframes curtir {
+  from{
+    transform: scale(0.2);
+  } 
+  to{
+    transform: scale(1.0);
+  }
+}
+
+@keyframes sumir {
+  from{
+    transform: scale(1.0);
+  }
+  to{
+    transform: scale(0);
+  }
 }
 
 .sidebar {

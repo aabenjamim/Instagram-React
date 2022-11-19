@@ -1,3 +1,4 @@
+
 export default function Usuario(){
 
     return(
@@ -28,12 +29,12 @@ function User(props){
     }
 
     return(
-    <div class="usuario" data-test="user">
+    <div className="usuario" data-test="user">
         <img id="image-perfil" src={props.imagem} data-test="profile-image" onClick={editarImagem}/>
-        <div class="texto" data-test="name">
+        <div className="texto" data-test="name">
             <strong>{props.nomeuser}</strong>
             <span>
-                <p class="nome-editavel">{props.nome}</p>
+                <p className="nome-editavel">{props.nome}</p>
                 <div onClick={editarNome} data-test="edit-name">
                     <ion-icon name="pencil"></ion-icon>
                 </div>
